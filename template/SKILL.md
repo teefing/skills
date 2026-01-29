@@ -1,6 +1,26 @@
 ---
-name: template-skill
-description: Replace with description of the skill and when Claude should use it.
+name: skill-name
+description: When this skill should be activated
 ---
 
-# Insert instructions below
+# Skill Title
+
+## Quick Start
+
+[Minimal working example]
+
+## Core Concepts
+
+[Detailed API documentation with examples]
+
+## Common Patterns
+
+[Real-world usage patterns]
+
+## Performance Tips
+
+[Optimization guidance]
+
+## See Also
+
+[Related skills]
