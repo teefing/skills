@@ -1,0 +1,192 @@
+{
+    "name": "AimeCard",
+    "dsl": {
+        "schema": "2.0",
+        "config": {
+            "update_multi": true
+        },
+        "body": {
+            "direction": "vertical",
+            "horizontal_spacing": "8px",
+            "vertical_spacing": "8px",
+            "horizontal_align": "left",
+            "vertical_align": "top",
+            "padding": "0px 0px 0px 0px",
+            "elements": [
+                {
+                    "tag": "img",
+                    "img_key": "img_v3_02km_fec28e90-b5f0-4260-812a-ca576b418ddg",
+                    "preview": true,
+                    "transparent": false,
+                    "scale_type": "fit_horizontal",
+                    "margin": "0px 0px 0px 0px"
+                },
+                {
+                    "tag": "column_set",
+                    "horizontal_spacing": "12px",
+                    "horizontal_align": "left",
+                    "columns": [
+                        {
+                            "tag": "column",
+                            "width": "60px",
+                            "elements": [
+                                {
+                                    "tag": "img",
+                                    "img_key": "img_v2_8626254c-2c9c-45bf-809b-b6f2508af27g",
+                                    "preview": true,
+                                    "scale_type": "crop_center",
+                                    "size": "60px 60px",
+                                    "alt": {
+                                        "tag": "plain_text",
+                                        "content": ""
+                                    }
+                                }
+                            ],
+                            "vertical_spacing": "8px",
+                            "horizontal_align": "left",
+                            "vertical_align": "center"
+                        },
+                        {
+                            "tag": "column",
+                            "width": "weighted",
+                            "elements": [
+                                {
+                                    "tag": "markdown",
+                                    "content": " **周翊 同学生日快乐 (09-13 ♍️)**\n 希望你一直如少年，干净纯粹心安，看透不美好却相信美好，见过不善良却依旧善良",
+                                    "text_align": "left"
+                                }
+                            ],
+                            "vertical_spacing": "8px",
+                            "horizontal_align": "left",
+                            "vertical_align": "top",
+                            "weight": 4
+                        }
+                    ],
+                    "margin": "12px 20px 12px 20px"
+                },
+                {
+                    "tag": "hr"
+                },
+                {
+                    "tag": "column_set",
+                    "horizontal_spacing": "8px",
+                    "horizontal_align": "left",
+                    "columns": [
+                        {
+                            "tag": "column",
+                            "width": "weighted",
+                            "elements": [
+                                {
+                                    "tag": "markdown",
+                                    "content": "🎁 **领取专属生日礼物**\n地点：15楼行政中心\n时间：9:00-18:00",
+                                    "text_align": "left"
+                                }
+                            ],
+                            "vertical_spacing": "8px",
+                            "horizontal_align": "left",
+                            "vertical_align": "top",
+                            "weight": 1
+                        },
+                        {
+                            "tag": "column",
+                            "width": "auto",
+                            "elements": [
+                                {
+                                    "tag": "button",
+                                    "text": {
+                                        "tag": "plain_text",
+                                        "content": "立刻领取"
+                                    },
+                                    "type": "default",
+                                    "width": "default",
+                                    "behaviors": [
+                                        {
+                                            "type": "open_url",
+                                            "default_url": "https://open.feishu.cn/?lang=zh-CN",
+                                            "pc_url": "https://open.feishu.cn/?lang=zh-CN",
+                                            "ios_url": "https://open.feishu.cn/?lang=zh-CN",
+                                            "android_url": "https://open.feishu.cn/?lang=zh-CN"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "vertical_spacing": "8px",
+                            "horizontal_align": "left",
+                            "vertical_align": "center"
+                        }
+                    ],
+                    "margin": "12px 20px 12px 20px"
+                },
+                {
+                    "tag": "hr"
+                },
+                {
+                    "tag": "column_set",
+                    "horizontal_spacing": "8px",
+                    "horizontal_align": "left",
+                    "columns": [
+                        {
+                            "tag": "column",
+                            "width": "weighted",
+                            "elements": [
+                                {
+                                    "tag": "markdown",
+                                    "content": "😘 **收到的生日祝福**\n王凡、刘子涵、陈奕君...给你送祝福啦～",
+                                    "text_align": "left"
+                                }
+                            ],
+                            "padding": "0px 0px 0px 0px",
+                            "direction": "vertical",
+                            "horizontal_spacing": "8px",
+                            "vertical_spacing": "8px",
+                            "horizontal_align": "left",
+                            "vertical_align": "top",
+                            "margin": "0px 0px 0px 0px",
+                            "weight": 1
+                        },
+                        {
+                            "tag": "column",
+                            "width": "auto",
+                            "elements": [
+                                {
+                                    "tag": "button",
+                                    "text": {
+                                        "tag": "plain_text",
+                                        "content": "查看祝福"
+                                    },
+                                    "type": "default",
+                                    "width": "default",
+                                    "behaviors": [
+                                        {
+                                            "type": "open_url",
+                                            "default_url": "https://open.feishu.cn/?lang=zh-CN",
+                                            "pc_url": "https://open.feishu.cn/?lang=zh-CN",
+                                            "ios_url": "https://open.feishu.cn/?lang=zh-CN",
+                                            "android_url": "https://open.feishu.cn/?lang=zh-CN"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "vertical_spacing": "8px",
+                            "horizontal_align": "left",
+                            "vertical_align": "center"
+                        }
+                    ],
+                    "margin": "12px 20px 20px 20px"
+                }
+            ]
+        },
+        "header": {
+            "title": {
+                "tag": "plain_text",
+                "content": "生日祝福，永远 18 岁～"
+            },
+            "subtitle": {
+                "tag": "plain_text",
+                "content": ""
+            },
+            "template": "orange",
+            "padding": "12px 12px 12px 12px"
+        }
+    }
+}
