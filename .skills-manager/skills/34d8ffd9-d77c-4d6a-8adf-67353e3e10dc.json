@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "skill_id": "34d8ffd9-d77c-4d6a-8adf-67353e3e10dc",
+  "path": "book-to-skill-2",
+  "path_key": "book-to-skill-2",
+  "enabled": true,
+  "tags": [],
+  "source": {
+    "type": "import",
+    "ref": null,
+    "subpath": null,
+    "branch": null
+  }
+}

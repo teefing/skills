@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "skill_id": "625db617-5e8d-4402-9855-32c49c2ad6f5",
+  "path": "workplace-growth-coach",
+  "path_key": "workplace-growth-coach",
+  "enabled": true,
+  "tags": [],
+  "source": {
+    "type": "import",
+    "ref": null,
+    "subpath": null,
+    "branch": null
+  }
+}

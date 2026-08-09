@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "skill_id": "41cadfda-575d-4f60-9489-fd2435c7f399",
+  "path": "lark-vc",
+  "path_key": "lark-vc",
+  "enabled": true,
+  "tags": [],
+  "source": {
+    "type": "import",
+    "ref": null,
+    "subpath": null,
+    "branch": null
+  }
+}

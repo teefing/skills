@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "skill_id": "d4f67d96-2bae-49b0-b6d2-9e108103eea6",
+  "path": "follow-builders",
+  "path_key": "follow-builders",
+  "enabled": true,
+  "tags": [],
+  "source": {
+    "type": "import",
+    "ref": null,
+    "subpath": null,
+    "branch": null
+  }
+}

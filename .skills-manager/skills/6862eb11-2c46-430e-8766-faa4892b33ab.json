@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "skill_id": "6862eb11-2c46-430e-8766-faa4892b33ab",
+  "path": "dbs-resonate",
+  "path_key": "dbs-resonate",
+  "enabled": true,
+  "tags": [],
+  "source": {
+    "type": "import",
+    "ref": null,
+    "subpath": null,
+    "branch": null
+  }
+}

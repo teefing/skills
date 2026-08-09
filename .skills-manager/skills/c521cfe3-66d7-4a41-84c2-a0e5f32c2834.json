@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "skill_id": "c521cfe3-66d7-4a41-84c2-a0e5f32c2834",
+  "path": "codex-dynamic-workflows-optimized",
+  "path_key": "codex-dynamic-workflows-optimized",
+  "enabled": true,
+  "tags": [],
+  "source": {
+    "type": "import",
+    "ref": null,
+    "subpath": null,
+    "branch": null
+  }
+}

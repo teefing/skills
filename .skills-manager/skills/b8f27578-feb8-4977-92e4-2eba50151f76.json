@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "skill_id": "b8f27578-feb8-4977-92e4-2eba50151f76",
+  "path": "design-lark-chart",
+  "path_key": "design-lark-chart",
+  "enabled": true,
+  "tags": [],
+  "source": {
+    "type": "import",
+    "ref": null,
+    "subpath": null,
+    "branch": null
+  }
+}

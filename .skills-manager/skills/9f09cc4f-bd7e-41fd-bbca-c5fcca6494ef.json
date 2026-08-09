@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "skill_id": "9f09cc4f-bd7e-41fd-bbca-c5fcca6494ef",
+  "path": "grill-with-docs",
+  "path_key": "grill-with-docs",
+  "enabled": true,
+  "tags": [],
+  "source": {
+    "type": "import",
+    "ref": null,
+    "subpath": null,
+    "branch": null
+  }
+}

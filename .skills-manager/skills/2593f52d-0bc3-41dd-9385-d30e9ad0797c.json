@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "skill_id": "2593f52d-0bc3-41dd-9385-d30e9ad0797c",
+  "path": "dbs-bridge",
+  "path_key": "dbs-bridge",
+  "enabled": true,
+  "tags": [],
+  "source": {
+    "type": "import",
+    "ref": null,
+    "subpath": null,
+    "branch": null
+  }
+}

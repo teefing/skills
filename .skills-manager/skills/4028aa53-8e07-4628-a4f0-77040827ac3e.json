@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "skill_id": "4028aa53-8e07-4628-a4f0-77040827ac3e",
+  "path": "dbs-chatroom",
+  "path_key": "dbs-chatroom",
+  "enabled": true,
+  "tags": [],
+  "source": {
+    "type": "import",
+    "ref": null,
+    "subpath": null,
+    "branch": null
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "skill_id": "877d083a-e059-4923-a45c-31214abd4eb6",
+  "path": "dbs-chatroom-austrian",
+  "path_key": "dbs-chatroom-austrian",
+  "enabled": true,
+  "tags": [],
+  "source": {
+    "type": "import",
+    "ref": null,
+    "subpath": null,
+    "branch": null
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "skill_id": "9779f1fc-8713-4862-ba60-7ec6cf3a09c7",
+  "path": "dbs-skill-cleaner",
+  "path_key": "dbs-skill-cleaner",
+  "enabled": true,
+  "tags": [],
+  "source": {
+    "type": "import",
+    "ref": null,
+    "subpath": null,
+    "branch": null
+  }
+}

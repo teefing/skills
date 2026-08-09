@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "skill_id": "cfc2e7c5-4e3f-4ffb-a09f-efbd380ba461",
+  "path": "dbs-update",
+  "path_key": "dbs-update",
+  "enabled": true,
+  "tags": [],
+  "source": {
+    "type": "import",
+    "ref": null,
+    "subpath": null,
+    "branch": null
+  }
+}

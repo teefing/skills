@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "skill_id": "a6aa114e-f947-4bd4-aceb-a39e0e327322",
+  "path": "bytetech-article",
+  "path_key": "bytetech-article",
+  "enabled": true,
+  "tags": [],
+  "source": {
+    "type": "import",
+    "ref": null,
+    "subpath": null,
+    "branch": null
+  }
+}

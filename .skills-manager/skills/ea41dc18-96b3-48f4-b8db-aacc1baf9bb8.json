@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "skill_id": "ea41dc18-96b3-48f4-b8db-aacc1baf9bb8",
+  "path": "lark-mail-2",
+  "path_key": "lark-mail-2",
+  "enabled": true,
+  "tags": [],
+  "source": {
+    "type": "import",
+    "ref": null,
+    "subpath": null,
+    "branch": null
+  }
+}

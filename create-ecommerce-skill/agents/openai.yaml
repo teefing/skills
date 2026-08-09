@@ -1,0 +1,4 @@
+interface:
+  display_name: "Create Ecommerce Skill"
+  short_description: "Generate ecommerce mini-app skill prompts"
+  default_prompt: "Use $create-ecommerce-skill to generate a mini-app MCP skill for an ecommerce checkout flow."

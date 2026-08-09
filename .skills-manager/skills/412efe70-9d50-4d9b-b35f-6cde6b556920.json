@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "skill_id": "412efe70-9d50-4d9b-b35f-6cde6b556920",
+  "path": "bits-unit-test-gen",
+  "path_key": "bits-unit-test-gen",
+  "enabled": true,
+  "tags": [],
+  "source": {
+    "type": "import",
+    "ref": null,
+    "subpath": null,
+    "branch": null
+  }
+}

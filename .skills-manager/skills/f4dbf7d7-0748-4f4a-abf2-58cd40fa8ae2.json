@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "skill_id": "f4dbf7d7-0748-4f4a-abf2-58cd40fa8ae2",
+  "path": "dbs-slowisfast",
+  "path_key": "dbs-slowisfast",
+  "enabled": true,
+  "tags": [],
+  "source": {
+    "type": "import",
+    "ref": null,
+    "subpath": null,
+    "branch": null
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "skill_id": "2b5bfdec-2ef6-43c2-941e-00ce19cc248f",
+  "path": "dbs-knowledge",
+  "path_key": "dbs-knowledge",
+  "enabled": true,
+  "tags": [],
+  "source": {
+    "type": "import",
+    "ref": null,
+    "subpath": null,
+    "branch": null
+  }
+}

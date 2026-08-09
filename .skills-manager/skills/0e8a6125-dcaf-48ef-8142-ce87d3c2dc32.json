@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "skill_id": "0e8a6125-dcaf-48ef-8142-ce87d3c2dc32",
+  "path": "dbs-standard-answer",
+  "path_key": "dbs-standard-answer",
+  "enabled": true,
+  "tags": [],
+  "source": {
+    "type": "import",
+    "ref": null,
+    "subpath": null,
+    "branch": null
+  }
+}

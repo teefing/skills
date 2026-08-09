@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "skill_id": "ebc481cb-4aa6-43c7-af08-ee6e962894c7",
+  "path": "bits-code-guard",
+  "path_key": "bits-code-guard",
+  "enabled": true,
+  "tags": [],
+  "source": {
+    "type": "import",
+    "ref": null,
+    "subpath": null,
+    "branch": null
+  }
+}
