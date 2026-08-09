@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "skill_id": "7116fc44-38ff-4fc8-96c4-18d597e01d8d",
+  "path": "skills/competitive-ads-extractor",
+  "path_key": "skills/competitive-ads-extractor",
+  "enabled": true,
+  "tags": [],
+  "source": {
+    "type": "import",
+    "ref": null,
+    "subpath": null,
+    "branch": null
+  }
+}

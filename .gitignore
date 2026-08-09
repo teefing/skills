@@ -5,3 +5,6 @@ __pycache__/
 
 workspace
 node_modules
+Thumbs.db
+*.tmp
+.skills-manager.lock

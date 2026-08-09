@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "skill_id": "7304b9fc-4202-4daa-b9ea-edbbf81b9f5f",
+  "path": "skills/managing-lark-bitable-data",
+  "path_key": "skills/managing-lark-bitable-data",
+  "enabled": true,
+  "tags": [],
+  "source": {
+    "type": "import",
+    "ref": null,
+    "subpath": null,
+    "branch": null
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "skill_id": "079accc5-2646-40a3-8362-940e3c518575",
+  "path": "skills/threejs/threejs-materials",
+  "path_key": "skills/threejs/threejs-materials",
+  "enabled": true,
+  "tags": [],
+  "source": {
+    "type": "import",
+    "ref": null,
+    "subpath": null,
+    "branch": null
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "skill_id": "e1b715bb-5193-4717-9d74-36af52b09fca",
+  "path": "skills/threejs/threejs-postprocessing",
+  "path_key": "skills/threejs/threejs-postprocessing",
+  "enabled": true,
+  "tags": [],
+  "source": {
+    "type": "import",
+    "ref": null,
+    "subpath": null,
+    "branch": null
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "skill_id": "fd844864-0143-40f2-a9b3-f1ce84c5286c",
+  "path": "skills/mckinsey-consultant",
+  "path_key": "skills/mckinsey-consultant",
+  "enabled": true,
+  "tags": [],
+  "source": {
+    "type": "import",
+    "ref": null,
+    "subpath": null,
+    "branch": null
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "skill_id": "f27e15c8-928d-4ca8-bac1-26b18add453a",
+  "path": "skills/feishu-card",
+  "path_key": "skills/feishu-card",
+  "enabled": true,
+  "tags": [],
+  "source": {
+    "type": "import",
+    "ref": null,
+    "subpath": null,
+    "branch": null
+  }
+}

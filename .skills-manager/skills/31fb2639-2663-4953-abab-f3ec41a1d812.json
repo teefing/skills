@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "skill_id": "31fb2639-2663-4953-abab-f3ec41a1d812",
+  "path": "skills/threejs/threejs-shaders",
+  "path_key": "skills/threejs/threejs-shaders",
+  "enabled": true,
+  "tags": [],
+  "source": {
+    "type": "import",
+    "ref": null,
+    "subpath": null,
+    "branch": null
+  }
+}

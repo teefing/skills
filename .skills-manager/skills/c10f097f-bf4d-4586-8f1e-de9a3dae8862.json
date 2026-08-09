@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "skill_id": "c10f097f-bf4d-4586-8f1e-de9a3dae8862",
+  "path": "skills/daily-trending",
+  "path_key": "skills/daily-trending",
+  "enabled": true,
+  "tags": [],
+  "source": {
+    "type": "import",
+    "ref": null,
+    "subpath": null,
+    "branch": null
+  }
+}

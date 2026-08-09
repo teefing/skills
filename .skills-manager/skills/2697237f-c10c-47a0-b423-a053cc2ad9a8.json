@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "skill_id": "2697237f-c10c-47a0-b423-a053cc2ad9a8",
+  "path": "skills/connect-apps",
+  "path_key": "skills/connect-apps",
+  "enabled": true,
+  "tags": [],
+  "source": {
+    "type": "import",
+    "ref": null,
+    "subpath": null,
+    "branch": null
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "skill_id": "4c006f5b-91f2-4533-928a-a76577097624",
+  "path": "skills/invoice-organizer",
+  "path_key": "skills/invoice-organizer",
+  "enabled": true,
+  "tags": [],
+  "source": {
+    "type": "import",
+    "ref": null,
+    "subpath": null,
+    "branch": null
+  }
+}

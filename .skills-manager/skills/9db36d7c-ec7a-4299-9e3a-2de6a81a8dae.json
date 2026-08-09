@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "skill_id": "9db36d7c-ec7a-4299-9e3a-2de6a81a8dae",
+  "path": "skills/threejs/threejs-lighting",
+  "path_key": "skills/threejs/threejs-lighting",
+  "enabled": true,
+  "tags": [],
+  "source": {
+    "type": "import",
+    "ref": null,
+    "subpath": null,
+    "branch": null
+  }
+}

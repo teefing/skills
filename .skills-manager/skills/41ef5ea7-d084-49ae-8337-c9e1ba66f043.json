@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "skill_id": "41ef5ea7-d084-49ae-8337-c9e1ba66f043",
+  "path": "skills/tailored-resume-generator",
+  "path_key": "skills/tailored-resume-generator",
+  "enabled": true,
+  "tags": [],
+  "source": {
+    "type": "import",
+    "ref": null,
+    "subpath": null,
+    "branch": null
+  }
+}

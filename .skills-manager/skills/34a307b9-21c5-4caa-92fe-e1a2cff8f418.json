@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "skill_id": "34a307b9-21c5-4caa-92fe-e1a2cff8f418",
+  "path": "skills/threejs/threejs-fundamentals",
+  "path_key": "skills/threejs/threejs-fundamentals",
+  "enabled": true,
+  "tags": [],
+  "source": {
+    "type": "import",
+    "ref": null,
+    "subpath": null,
+    "branch": null
+  }
+}
