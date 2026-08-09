@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
   "scenario_id": "8c5ce67f-a15a-406b-92cd-46ca8748f4bf",
-  "name": "Default",
+  "name": "Code",
   "description": "Default startup scenario",
-  "icon": null,
+  "icon": "code-2",
   "sort_order": 0
 }
