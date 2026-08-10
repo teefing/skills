@@ -1,12 +1,12 @@
 {
   "schema_version": 1,
-  "skill_id": "212d0353-7a1f-4b4b-9d6f-71f5d1c2c407",
-  "path": "grill-me",
-  "path_key": "grill-me",
+  "skill_id": "caa44053-61e1-4f84-b4ce-4deeae3dd081",
+  "path": "lark-vc",
+  "path_key": "lark-vc",
   "enabled": true,
   "tags": [],
   "source": {
-    "type": "import",
+    "type": "local",
     "ref": null,
     "subpath": null,
     "branch": null

@@ -1,12 +1,12 @@
 {
   "schema_version": 1,
-  "skill_id": "3f97b4bb-b246-47fa-9c37-c7b33e28830d",
-  "path": "skill-creator",
-  "path_key": "skill-creator",
+  "skill_id": "af60b619-fa39-48f1-bd59-9913e27ccb6f",
+  "path": "wayfinder",
+  "path_key": "wayfinder",
   "enabled": true,
   "tags": [],
   "source": {
-    "type": "import",
+    "type": "local",
     "ref": null,
     "subpath": null,
     "branch": null

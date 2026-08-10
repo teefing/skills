@@ -1,12 +1,12 @@
 {
   "schema_version": 1,
-  "skill_id": "7f3da3d2-c778-49b9-b27a-44c7aa38f194",
-  "path": "humanizer-zh",
-  "path_key": "humanizer-zh",
+  "skill_id": "b69e8b91-c4f6-4891-8a9f-31dfe2303774",
+  "path": "lark-wiki",
+  "path_key": "lark-wiki",
   "enabled": true,
   "tags": [],
   "source": {
-    "type": "import",
+    "type": "local",
     "ref": null,
     "subpath": null,
     "branch": null

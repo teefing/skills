@@ -1,12 +1,12 @@
 {
   "schema_version": 1,
-  "skill_id": "fc0494e3-f58d-423d-bfef-4b06764ed217",
-  "path": "grilling",
-  "path_key": "grilling",
+  "skill_id": "152841b5-a0da-46e7-b5ac-7a109efa270a",
+  "path": "lark-sheets",
+  "path_key": "lark-sheets",
   "enabled": true,
   "tags": [],
   "source": {
-    "type": "import",
+    "type": "local",
     "ref": null,
     "subpath": null,
     "branch": null

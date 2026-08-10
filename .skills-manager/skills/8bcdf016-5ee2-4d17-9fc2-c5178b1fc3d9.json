@@ -1,12 +1,12 @@
 {
   "schema_version": 1,
-  "skill_id": "b95b1d8f-a5a3-4ad7-bf50-cc63356e0d13",
+  "skill_id": "8bcdf016-5ee2-4d17-9fc2-c5178b1fc3d9",
   "path": "bytedance-auth",
   "path_key": "bytedance-auth",
   "enabled": true,
   "tags": [],
   "source": {
-    "type": "import",
+    "type": "local",
     "ref": null,
     "subpath": null,
     "branch": null

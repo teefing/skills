@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "skill_id": "6c57c753-751a-40e5-8a6e-d45104328e94",
+  "path": "lark-vc-agent",
+  "path_key": "lark-vc-agent",
+  "enabled": true,
+  "tags": [],
+  "source": {
+    "type": "local",
+    "ref": null,
+    "subpath": null,
+    "branch": null
+  }
+}

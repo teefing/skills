@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "skill_id": "f61d1ea8-f75e-4c8f-9780-932ad5138f3e",
+  "path": "lark-im",
+  "path_key": "lark-im",
+  "enabled": true,
+  "tags": [],
+  "source": {
+    "type": "local",
+    "ref": null,
+    "subpath": null,
+    "branch": null
+  }
+}

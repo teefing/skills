@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "skill_id": "f12e3a21-55d4-45fa-8824-99905f43e909",
+  "path": "teach",
+  "path_key": "teach",
+  "enabled": true,
+  "tags": [],
+  "source": {
+    "type": "local",
+    "ref": null,
+    "subpath": null,
+    "branch": null
+  }
+}
