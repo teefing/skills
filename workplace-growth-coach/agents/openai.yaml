@@ -1,4 +1,0 @@
-interface:
-  display_name: "职场成长教练"
-  short_description: "把日常工作转化为可复用的成长动作"
-  default_prompt: "Use $workplace-growth-coach to review my week and turn it into concrete growth actions."

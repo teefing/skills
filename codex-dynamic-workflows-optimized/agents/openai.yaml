@@ -1,4 +1,0 @@
-interface:
-  display_name: "Optimized AI Agent Dynamic Workflows"
-  short_description: "Plan and run staged, verifiable subagent workflows"
-  default_prompt: "Use $codex-dynamic-workflows-optimized to plan and run a staged, verifiable multi-agent workflow for this task."
