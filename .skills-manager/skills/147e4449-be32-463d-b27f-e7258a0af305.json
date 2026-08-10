@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "skill_id": "147e4449-be32-463d-b27f-e7258a0af305",
+  "path": "code-study-module",
+  "path_key": "code-study-module",
+  "enabled": true,
+  "tags": [],
+  "source": {
+    "type": "local",
+    "ref": null,
+    "subpath": null,
+    "branch": null
+  }
+}

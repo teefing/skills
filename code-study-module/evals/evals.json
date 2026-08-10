@@ -1,0 +1,23 @@
+{
+  "skill_name": "code-study-module",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "code-study-module activity_tab",
+      "expected_output": "The assistant should ask whether the user wants to add a reading motivation/focus and whether to keep the default output directory before starting analysis.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "code-study-module 帮我调研一下这个仓库里某个模块的代码结构，输出一份可教学的源码阅读文档",
+      "expected_output": "The assistant should stop and ask for the required module name, rather than starting broad repository research.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "code-study-module payment_router，侧重点是新同学阅读主链路，不要被外部框架细节打断；默认输出目录即可",
+      "expected_output": "The assistant should analyze the named module, write a document under <project-root>/docs/payment_router/, explain the main flow clearly, cite source file and line positions near important logic/chain steps, embed clickable source links in relevant sections, keep framework context proportional, and self-review before final delivery.",
+      "files": []
+    }
+  ]
+}
