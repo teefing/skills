@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "skill_id": "9b8a1596-2936-4bc9-af7a-78f613004ed3",
+  "path": "ai-code-change-analysis",
+  "path_key": "ai-code-change-analysis",
+  "enabled": true,
+  "tags": [],
+  "source": {
+    "type": "local",
+    "ref": null,
+    "subpath": null,
+    "branch": null
+  }
+}
