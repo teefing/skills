@@ -1,0 +1,5 @@
+interface:
+  display_name: "Step"
+  short_description: "Clarify requirements only — no execution"
+policy:
+  allow_implicit_invocation: false

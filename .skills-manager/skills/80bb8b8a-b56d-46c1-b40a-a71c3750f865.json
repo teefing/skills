@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "skill_id": "80bb8b8a-b56d-46c1-b40a-a71c3750f865",
+  "path": "step",
+  "path_key": "step",
+  "enabled": true,
+  "tags": [],
+  "source": {
+    "type": "local",
+    "ref": null,
+    "subpath": null,
+    "branch": null
+  }
+}
