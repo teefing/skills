@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "skill_id": "067e2a84-5172-435c-b540-0a3b02aab47a",
+  "path": "haohao-shuohua",
+  "path_key": "haohao-shuohua",
+  "enabled": true,
+  "tags": [],
+  "source": {
+    "type": "local",
+    "ref": null,
+    "subpath": null,
+    "branch": null
+  }
+}
