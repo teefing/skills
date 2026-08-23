@@ -5,7 +5,7 @@
   "sort_order": 0,
   "tools": {
     "codex": true,
-    "deepseek_harness": true,
+    "deepseek_harness": false,
     "trae_cn": true
   }
 }
