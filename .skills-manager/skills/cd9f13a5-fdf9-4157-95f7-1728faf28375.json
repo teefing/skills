@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "skill_id": "cd9f13a5-fdf9-4157-95f7-1728faf28375",
+  "path": "defuddle",
+  "path_key": "defuddle",
+  "enabled": true,
+  "tags": [],
+  "source": {
+    "type": "skillssh",
+    "ref": "kepano/obsidian-skills/defuddle",
+    "subpath": "skills/defuddle",
+    "branch": null
+  }
+}
