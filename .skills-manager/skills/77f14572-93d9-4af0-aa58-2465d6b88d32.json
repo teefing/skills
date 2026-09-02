@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "skill_id": "77f14572-93d9-4af0-aa58-2465d6b88d32",
+  "path": "clean-developer-disk-space",
+  "path_key": "clean-developer-disk-space",
+  "enabled": true,
+  "tags": [],
+  "source": {
+    "type": "local",
+    "ref": null,
+    "subpath": null,
+    "branch": null
+  }
+}
