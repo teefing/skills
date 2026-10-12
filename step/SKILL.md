@@ -21,6 +21,7 @@ This skill is a **requirements-clarification stage**. It reuses the `grill-me` i
    - Confirmed decisions (with the user's answer for each)
    - Open questions / assumptions still to be validated
    - Acceptance criteria — how we will know it is done
+   - If later implementation changes code, include an acceptance criterion requiring concise comments for non-obvious logic, key constraints, edge cases, and compatibility behavior. Self-explanatory code needs no comments.
 3. Ask the user to confirm the summary. Wait for explicit confirmation.
 
 ## Hard Constraints — Do Not Execute
