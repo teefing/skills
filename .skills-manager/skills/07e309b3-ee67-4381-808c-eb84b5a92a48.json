@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "skill_id": "07e309b3-ee67-4381-808c-eb84b5a92a48",
+  "path": "context-settle",
+  "path_key": "context-settle",
+  "enabled": true,
+  "tags": [],
+  "source": {
+    "type": "local",
+    "ref": null,
+    "subpath": null,
+    "branch": null
+  }
+}
