@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "skill_id": "e43ac224-8432-4747-b826-ee33e16c73e6",
+  "path": "context-init",
+  "path_key": "context-init",
+  "enabled": true,
+  "tags": [],
+  "source": {
+    "type": "local",
+    "ref": null,
+    "subpath": null,
+    "branch": null
+  }
+}
