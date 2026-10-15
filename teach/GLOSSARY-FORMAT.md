@@ -1,35 +1,35 @@
-# GLOSSARY.md Format
+# GLOSSARY.md 格式
 
-`GLOSSARY.md` is the canonical language for this teaching workspace. All explainers, exercises, and learning records should adhere to its terminology. Building it is itself part of learning: compressing a concept into a tight definition is evidence the user understands it.
+`GLOSSARY.md` 是本教学工作区的规范用语标准。所有讲解、练习和学习记录都应遵循其中的术语。建立术语表本身也是学习的一部分：能把一个概念压缩成精确、简洁的定义，就是用户理解它的证据。
 
-## Structure
+## 结构
 
 ```md
-# {Topic} Glossary
+# {主题}术语表
 
-{One or two sentence description of the topic this glossary covers.}
+{用一到两句话说明本术语表涵盖的主题。}
 
-## Terms
+## 术语
 
-**Hypertrophy**:
-Muscle growth driven by mechanical tension and metabolic stress over repeated training sessions.
-_Avoid_: Bulking, getting big
+**肌肥大（Hypertrophy）**：
+在反复训练中，由机械张力和代谢压力驱动的肌肉增长。
+_避免使用_：增肌块、练大
 
-**Progressive overload**:
-Systematically increasing the demand on a muscle over time — via load, volume, or intensity.
-_Avoid_: Pushing harder, levelling up
+**渐进超负荷（Progressive overload）**：
+通过负重、训练量或强度，系统地逐步提高肌肉所承受的要求。
+_避免使用_：更用力、升级
 
-**RPE (Rate of Perceived Exertion)**:
-A 1–10 self-rating of how hard a set felt, where 10 is failure and 8 means two reps left in the tank.
-_Avoid_: Effort score, intensity rating
+**RPE（主观用力程度，Rate of Perceived Exertion）**：
+用 1–10 分自评一组训练有多困难，其中 10 分表示力竭，8 分表示还能再做两次。
+_避免使用_：努力分数、强度评分
 ```
 
-## Rules
+## 规则
 
-- **Add a term only when the user understands it.** The glossary is a record of compressed knowledge, not a dictionary the user reads to learn. If the user has just been introduced to a concept, wait until they can use it correctly before promoting it here.
-- **Be opinionated.** When several words exist for the same concept, pick the best one and list the rest as aliases to avoid. This is how language compresses.
-- **Keep definitions tight.** One or two sentences. Define what the term IS, not what it does or how to do it.
-- **Use the glossary's own terms inside definitions.** Once a term is in the glossary, prefer it everywhere — including inside other definitions. This is what makes complex terms easier to grasp later.
-- **Group under subheadings** when natural clusters emerge (e.g. `## Anatomy`, `## Programming`). A flat list is fine when terms cohere.
-- **Flag ambiguities explicitly.** If a term is used loosely in the wider field, note the resolution: "In this workspace, 'set' always means a working set — warm-ups are tracked separately."
-- **Revise as understanding deepens.** A definition the user wrote in week one may be wrong by week six. Update in place; do not leave stale entries.
+- **只有当用户理解某术语后才添加。** 术语表是压缩知识的记录，不是供用户从头学习的词典。如果用户刚接触某个概念，应等到他们能正确运用后再将其纳入。
+- **明确选定标准用词。** 当同一概念存在多种说法时，选择最佳用词，并把其余说法列为应避免的别名。语言正是通过这种方式实现压缩。
+- **定义保持精炼。** 控制在一到两句话。说明该术语“是什么”，而不是它“做什么”或“怎么做”。
+- **在定义中使用术语表已有词语。** 一旦某个术语进入术语表，应在所有地方优先使用，包括其他定义内部。这样以后理解复杂术语会更容易。
+- **出现自然分类时按子标题分组**（例如 `## 解剖学`、`## 训练编排`）。如果术语彼此紧密相关，也可以使用单层列表。
+- **明确标注歧义。** 如果某个词在更广泛的领域中常被宽泛使用，应说明本工作区的约定：“在本工作区中，‘组’始终指正式训练组——热身组单独记录。”
+- **随着理解深入而修订。** 用户第一周写下的定义，到第六周可能已不准确。直接更新原条目，不要保留过时内容。
