@@ -1,31 +1,31 @@
-# MISSION.md Format
+# MISSION.md 格式
 
-`MISSION.md` lives at the workspace root. It captures the _reason_ the user is learning this topic. Every teaching decision — what to teach next, which resources to surface, which exercises to design — should trace back to this document.
+`MISSION.md` 位于工作区根目录，用于记录用户学习该主题的_原因_。所有教学决策——下一步教什么、推荐哪些资源、设计什么练习——都应能追溯到这份文档。
 
-## Template
+## 模板
 
 ```md
-# Mission: {Topic}
+# 学习使命：{主题}
 
-## Why
-{1-3 sentences. The concrete real-world goal the user is chasing. What changes in their life or work when they have this skill? Avoid abstract framings like "to understand X" — push for the underlying outcome.}
+## 原因
+{用 1–3 句话说明用户追求的具体、现实目标。掌握这项技能后，他们的生活或工作会发生什么变化？避免“为了理解 X”这类抽象表述，应继续追问其背后的实际结果。}
 
-## Success looks like
-- {A specific, observable thing the user will be able to do}
-- {Another specific thing}
-- {…}
+## 成功标准
+- {用户将能够完成的一项具体、可观察的事情}
+- {另一项具体成果}
+- {……}
 
-## Constraints
-- {Time, budget, prior commitments, learning preferences, anything that bounds the approach}
+## 约束
+- {时间、预算、既有安排、学习偏好，以及任何会限制学习方式的条件}
 
-## Out of scope
-- {Adjacent topics the user explicitly does not want to chase right now — protects the zone of proximal development}
+## 暂不涉及
+- {用户目前明确不想扩展到的相邻主题——用于保护其最近发展区}
 ```
 
-## Rules
+## 规则
 
-- **One mission per workspace.** If the user wants to learn two unrelated things, that is two workspaces.
-- **Concrete over abstract.** "Run a half marathon by October" beats "get fitter." "Ship a Rust CLI to my team" beats "learn Rust."
-- **Push back on vagueness.** If the user cannot articulate why, interview them before writing anything. A bad mission is worse than no mission.
-- **Revise when reality shifts.** Missions change. When the user's goal moves, update this file — don't leave a stale mission steering future sessions.
-- **Keep it short.** If `MISSION.md` runs past a screen, it has stopped being a compass and started being a plan.
+- **每个工作区只对应一个学习使命。** 如果用户想学习两个互不相关的主题，应分别使用两个工作区。
+- **具体优于抽象。** “在十月前跑完半程马拉松”优于“变得更健康”；“为团队交付一个 Rust 命令行工具”优于“学习 Rust”。
+- **对模糊目标继续追问。** 如果用户无法说明学习原因，应先访谈确认，再写入内容。糟糕的使命比没有使命更糟。
+- **现实变化时及时修订。** 学习使命会变化。当用户的目标发生转移时，应更新此文件，不要让过时的使命继续引导后续课程。
+- **保持简短。** 如果 `MISSION.md` 长到一屏放不下，它就不再是指南针，而变成了一份计划书。
