@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "skill_id": "b2da92c4-5238-44d8-837b-30094de8bfe8",
+  "path": "sepia",
+  "path_key": "sepia",
+  "enabled": true,
+  "tags": [],
+  "source": {
+    "type": "skillssh",
+    "ref": "nanako0129/sepia/sepia",
+    "subpath": "skills/sepia",
+    "branch": null
+  }
+}
