@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "scenario_id": "a915ada4-79fd-41e6-bee6-3a11ddaa35d1",
+  "skill_id": "18626451-1726-4c6e-92cf-13e219d3f79b",
+  "sort_order": 0,
+  "tools": {
+    "agent": true,
+    "codex": true,
+    "deepseek_harness": true,
+    "pi": true,
+    "trae_cn": true
+  }
+}
