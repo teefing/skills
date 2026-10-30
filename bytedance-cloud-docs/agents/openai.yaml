@@ -1,4 +1,0 @@
-interface:
-  display_name: "ByteDance Cloud Docs"
-  short_description: "Search and fetch Cloud Docs via bytedcli"
-  default_prompt: "Use $bytedance-cloud-docs to search docs or fetch doc details."

@@ -4,7 +4,10 @@
   "skill_id": "f6d9b96c-fc15-4e65-8cf5-40f8a8aa875a",
   "sort_order": 25,
   "tools": {
+    "agent": true,
     "codex": true,
+    "deepseek_harness": true,
+    "pi": true,
     "trae_cn": true
   }
 }
