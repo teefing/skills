@@ -1,0 +1,330 @@
+{
+  "format_version": 1,
+  "release_id": "0.180.0",
+  "public_topics": {
+    "code-diff-correlation": {
+      "reference": "references/code-diff-correlation.md",
+      "business_extensions": {
+        "enabled": false,
+        "allowed_anchors": []
+      }
+    },
+    "diag-coverage": {
+      "reference": "references/diag-coverage.md",
+      "business_extensions": {
+        "enabled": false,
+        "allowed_anchors": []
+      }
+    },
+    "diag-mock": {
+      "reference": "references/diag-mock.md",
+      "business_extensions": {
+        "enabled": false,
+        "allowed_anchors": []
+      }
+    },
+    "diag-record": {
+      "reference": "references/diag-record.md",
+      "business_extensions": {
+        "enabled": false,
+        "allowed_anchors": []
+      }
+    },
+    "diag-replay-failure": {
+      "reference": "references/diag-replay-failure.md",
+      "business_extensions": {
+        "enabled": false,
+        "allowed_anchors": []
+      }
+    },
+    "diag-replay": {
+      "reference": "references/diag-replay.md",
+      "business_extensions": {
+        "enabled": false,
+        "allowed_anchors": []
+      }
+    },
+    "diff-analysis": {
+      "reference": "references/diff-analysis.md",
+      "business_extensions": {
+        "enabled": true,
+        "allowed_anchors": [
+          "P6.before",
+          "P7.before",
+          "P8.before",
+          "P10.before"
+        ]
+      }
+    },
+    "diff-denoise": {
+      "reference": "references/diff-denoise.md",
+      "business_extensions": {
+        "enabled": false,
+        "allowed_anchors": []
+      }
+    },
+    "diff-query-reference": {
+      "reference": "references/diff-query-reference.md",
+      "business_extensions": {
+        "enabled": false,
+        "allowed_anchors": []
+      }
+    },
+    "diff-remediation-loop": {
+      "reference": "references/diff-remediation-loop.md",
+      "business_extensions": {
+        "enabled": false,
+        "allowed_anchors": []
+      }
+    },
+    "domain-model": {
+      "reference": "references/domain-model.md",
+      "business_extensions": {
+        "enabled": false,
+        "allowed_anchors": []
+      }
+    },
+    "enums": {
+      "reference": "references/enums.md",
+      "business_extensions": {
+        "enabled": false,
+        "allowed_anchors": []
+      }
+    },
+    "flow-diff-root-cause": {
+      "reference": "references/flow-diff-root-cause.md",
+      "business_extensions": {
+        "enabled": false,
+        "allowed_anchors": []
+      }
+    },
+    "invocation": {
+      "reference": "references/invocation.md",
+      "business_extensions": {
+        "enabled": false,
+        "allowed_anchors": []
+      }
+    },
+    "mock-config": {
+      "reference": "references/mock-config.md",
+      "business_extensions": {
+        "enabled": false,
+        "allowed_anchors": []
+      }
+    },
+    "noise-template-rule": {
+      "reference": "references/noise-template-rule.md",
+      "business_extensions": {
+        "enabled": false,
+        "allowed_anchors": []
+      }
+    },
+    "online-source-refresh": {
+      "reference": "references/online-source-refresh.md",
+      "business_extensions": {
+        "enabled": false,
+        "allowed_anchors": []
+      }
+    },
+    "outbound-status": {
+      "reference": "references/outbound-status.md",
+      "business_extensions": {
+        "enabled": false,
+        "allowed_anchors": []
+      }
+    },
+    "plan-api-schema": {
+      "reference": "references/plan-api-schema.md",
+      "business_extensions": {
+        "enabled": false,
+        "allowed_anchors": []
+      }
+    },
+    "plan-management": {
+      "reference": "references/plan-management.md",
+      "business_extensions": {
+        "enabled": false,
+        "allowed_anchors": []
+      }
+    },
+    "recorded-flow": {
+      "reference": "references/recorded-flow.md",
+      "business_extensions": {
+        "enabled": false,
+        "allowed_anchors": []
+      }
+    },
+    "remediation-deep-dive": {
+      "reference": "references/remediation-deep-dive.md",
+      "business_extensions": {
+        "enabled": false,
+        "allowed_anchors": []
+      }
+    },
+    "remediation-noise": {
+      "reference": "references/remediation-noise.md",
+      "business_extensions": {
+        "enabled": false,
+        "allowed_anchors": []
+      }
+    },
+    "remediation-plan": {
+      "reference": "references/remediation-plan.md",
+      "business_extensions": {
+        "enabled": false,
+        "allowed_anchors": []
+      }
+    },
+    "replay-diagnosis": {
+      "reference": "references/replay-diagnosis.md",
+      "business_extensions": {
+        "enabled": false,
+        "allowed_anchors": []
+      }
+    },
+    "replay-execution": {
+      "reference": "references/replay-execution.md",
+      "business_extensions": {
+        "enabled": false,
+        "allowed_anchors": []
+      }
+    },
+    "smart-access": {
+      "reference": "references/smart-access.md",
+      "business_extensions": {
+        "enabled": false,
+        "allowed_anchors": []
+      }
+    },
+    "task-analysis": {
+      "reference": "references/task-analysis.md",
+      "business_extensions": {
+        "enabled": true,
+        "allowed_anchors": [
+          "P4.before",
+          "P5.before",
+          "P6.before",
+          "P7.before",
+          "P8.before"
+        ]
+      }
+    },
+    "task-api": {
+      "reference": "references/task-api.md",
+      "business_extensions": {
+        "enabled": false,
+        "allowed_anchors": []
+      }
+    },
+    "task-diff-triage": {
+      "reference": "references/task-diff-triage.md",
+      "business_extensions": {
+        "enabled": false,
+        "allowed_anchors": []
+      }
+    },
+    "troubleshooting": {
+      "reference": "references/troubleshooting.md",
+      "business_extensions": {
+        "enabled": false,
+        "allowed_anchors": []
+      }
+    }
+  },
+  "businesses": {},
+  "files": {
+    "references/code-diff-correlation.md": {
+      "sha256": "0e19398f7ba8247af54d25c950920d94dedb2cdbdf677e989617d45191a03617"
+    },
+    "references/diag-coverage.md": {
+      "sha256": "8aed892a0fa57ae4b7d0ecb118a781663058da7cd5fbce1a5e0ed355f2eae8f1"
+    },
+    "references/diag-mock.md": {
+      "sha256": "f086a52e14a948360fc5150fce26630e6cd5e8e9e0d34923585eda57c85ce1a0"
+    },
+    "references/diag-record.md": {
+      "sha256": "2191fc5987824e8bda4a27143c1f30090ab38ba545d23af10227fed7a58d5269"
+    },
+    "references/diag-replay-failure.md": {
+      "sha256": "ce4b311d550a861b34a94d1a4f79ec296bc59a9017ffdc1fe3ff6a270470028c"
+    },
+    "references/diag-replay.md": {
+      "sha256": "c8c1439bfeb522cbd38b1756dfbf7fb7d3ba6c97f9724ebfc96f1b97fc7a385c"
+    },
+    "references/diff-analysis.md": {
+      "sha256": "853befe08924f43300ac0e6e0bcd23513d0a869388713791068225561c3f4bdf"
+    },
+    "references/diff-denoise.md": {
+      "sha256": "d0fc7722d5438e6c25df8afe317676c0cfea3e31675517d27dc3b09a4e13f22d"
+    },
+    "references/diff-query-reference.md": {
+      "sha256": "3330d9156c58c8d23b72dfb6d02771beffa98c9e0ae51d41c817c3f15bb90f9f"
+    },
+    "references/diff-remediation-loop.md": {
+      "sha256": "6351807e9a579d6199d3cd30d872db47871b9706a2fc1552714e96004a4ffa4d"
+    },
+    "references/domain-model.md": {
+      "sha256": "e446f3fa2050b2a268b4a0e296b1d55e9044ccf7a1bd568bca52b17aeaf20251"
+    },
+    "references/enums.md": {
+      "sha256": "66ece00acea25399f0e03b8b650192cac9232fa651468f1f125e07870947b6d3"
+    },
+    "references/flow-diff-root-cause.md": {
+      "sha256": "2dd13ca096b91aff3d9e30422fddc1e2bdc10927d7fe77d301e991644751412b"
+    },
+    "references/invocation.md": {
+      "sha256": "fa91fa6f0f8f2a7e5038db6498584ae8aa9530d14ebacdb899f9f457cd64afbb"
+    },
+    "references/mock-config.md": {
+      "sha256": "c7c505d83ce0b936b8d4156c0041e7351ddc6d417b391b1b0cd9156c3bd3b6f7"
+    },
+    "references/noise-template-rule.md": {
+      "sha256": "239364f43a9fea7c9be147f5e57084e021b74a75de1d2de3877b194a1034ce21"
+    },
+    "references/online-source-refresh.md": {
+      "sha256": "d70a2db609c557a74a13e18e2f60ee47b1c488f01f0fcc558897529360f7ebb9"
+    },
+    "references/outbound-status.md": {
+      "sha256": "6c82bbe4accef694c3e8da331ee05c4dfc31fd8225c998625db10235fdb8d217"
+    },
+    "references/plan-api-schema.md": {
+      "sha256": "bf84a7a5bbf07ff9f26efc34f5a953c784cf57b4cb5f4a258dc897aa590853e6"
+    },
+    "references/plan-management.md": {
+      "sha256": "8b2e060a0d306711b85a3957414f37edb6d9aee007781354557ab3b2772d4874"
+    },
+    "references/recorded-flow.md": {
+      "sha256": "b39c2ec18a28a9d69e12cc31d7f77549203e0592953cd11ac6b0473d1dfd8979"
+    },
+    "references/remediation-deep-dive.md": {
+      "sha256": "ce596e209282c1dde9e0acdae5da19601ecbf2a21d9bef055c77b7b4a0cef4d1"
+    },
+    "references/remediation-noise.md": {
+      "sha256": "873b1c8ad7a6c2aa01aa867a53a0eaa22045d7422d14b553aacccdc1ccc17224"
+    },
+    "references/remediation-plan.md": {
+      "sha256": "3d61609f9b611a7edf28f5d0038eb958c6001ef0aecc1d87a2375ce47d3e888a"
+    },
+    "references/replay-diagnosis.md": {
+      "sha256": "2fd346aa28a63250d3e54b6117d5d95b7be03fd3c5993bd96cf3378656fbd399"
+    },
+    "references/replay-execution.md": {
+      "sha256": "ad48b9ac2b7740f42217ed003895908ae9c9e2defdc7b0f3e81a975d37dec446"
+    },
+    "references/smart-access.md": {
+      "sha256": "0de6db29a6ec420396eb6c7f7a5e3691b047d34672351a601786f429af900593"
+    },
+    "references/task-analysis.md": {
+      "sha256": "5af0dc0ee5a9b21af6b42b90c39559c0b2d7ea9cf9edeadd6b0c765d793a553c"
+    },
+    "references/task-api.md": {
+      "sha256": "1cb9128765e194b435c54109080fc42ac3821fa7e25c8e31241a975c02fdd195"
+    },
+    "references/task-diff-triage.md": {
+      "sha256": "e17d887209f5c8069ef2aad21aed767d775433a5261f5f224a5dc0d82a0cadb7"
+    },
+    "references/troubleshooting.md": {
+      "sha256": "7f87f60458f964857592d777384cb5bfac141bcfe266a7c7a48f8dafc25d0a4f"
+    }
+  }
+}

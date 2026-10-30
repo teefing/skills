@@ -1,0 +1,20 @@
+{
+  "product_name": "demo-product",
+  "region": "demo-deploy-region",
+  "account_id": "demo-location/demo-account",
+  "data": {
+    "id": "demo-location/demo-account",
+    "product": "demo-product_rt",
+    "end_point": "https://example.com/v1/projects/demo-project/locations/demo-location/publishers/demo-provider/models/demo-model:streamGenerateContent",
+    "api_ver": "2023-12-01-preview",
+    "deployment": "",
+    "valid_key": 1,
+    "region": "demo-provider-region",
+    "deploy_region": "demo-deploy-region",
+    "tpm": 0,
+    "qpm": 0,
+    "select_rate": 1,
+    "use_limit": 0,
+    "dedicated_to_list": ["demo-team-a", "demo-team-b"]
+  }
+}

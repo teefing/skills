@@ -1,0 +1,25 @@
+{
+  "product_info_list": [
+    {
+      "allow_region_list": ["CN", "SG", "NonTT", "USTTP"],
+      "auto_approval_info": { "qpm": 0, "tpm": 0 },
+      "channel_id": 1,
+      "channel_name": "demo-channel",
+      "channel_type": "demo-channel-type",
+      "ext": "{\"is_test\":0}",
+      "model": "demo-model",
+      "model_name": "demo-model",
+      "model_series": "",
+      "model_version": "demo-model-version",
+      "price": "{\"unit\":\"\",\"price_region\":0,\"prompt_price\":0.0015,\"completion_price\":0.0075,\"web_search_price\":14,\"audio_prompt_price\":0,\"completion_image_price\":0,\"read_cached_prompt_price\":0.00015,\"write_cached_prompt_price\":0}",
+      "product_func": "[\"function_call\",\"thinking\",\"network_search\"]",
+      "product_id": 1,
+      "product_name": "demo-product",
+      "resource_level": "",
+      "safety_level": "M3",
+      "status": 1,
+      "vendor_name": "demo-vendor"
+    }
+  ],
+  "total": 1
+}

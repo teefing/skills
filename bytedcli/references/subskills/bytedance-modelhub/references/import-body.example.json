@@ -1,0 +1,20 @@
+{
+  "product_name": "demo-product",
+  "region": "demo-deploy-region",
+  "items": [
+    {
+      "api_ver": "2023-12-01-preview",
+      "dedicated_to_list": ["demo-team-a"],
+      "deployment": null,
+      "end_point": "https://example.com/v1/projects/demo-project/locations/demo-location/publishers/demo-provider/models/demo-model:streamGenerateContent",
+      "id": "demo-location/demo-account",
+      "key1": "sample-key-reference",
+      "on_demand": false,
+      "product": "demo-product_rt",
+      "region": "demo-provider-region",
+      "select_rate": 1,
+      "use_limit": 0,
+      "valid_key": 1
+    }
+  ]
+}

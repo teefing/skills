@@ -1,0 +1,17 @@
+{
+  "accounts": [
+    {
+      "api_ver": "2023-12-01-preview",
+      "dedicated_to_list": ["demo-tenant"],
+      "deployment": "null",
+      "end_point": "https://example.com/v1/projects/demo-project/locations/global/publishers/demo-provider/models/demo-model:streamGenerateContent",
+      "id": "global/demo-project",
+      "key1": "***",
+      "key2": "***",
+      "product": "demo-product_rt",
+      "region": "demo-provider-region",
+      "select_rate": 1,
+      "valid_key": 1
+    }
+  ]
+}

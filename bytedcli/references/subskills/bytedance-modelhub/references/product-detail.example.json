@@ -1,0 +1,117 @@
+{
+  "base": {
+    "StatusCode": 0,
+    "StatusMessage": "success"
+  },
+  "resource_level_2_detail_map": {
+    "": {
+      "paygo_info": {
+        "channel_resource_info_list": [
+          {
+            "ak": "sample-access-key-reference",
+            "alto_ticket_url": "",
+            "channel_id": 1,
+            "channel_name": "demo-channel",
+            "channel_resource_end_time": "",
+            "channel_resource_name": "demo-location/demo-account",
+            "channel_resource_start_time": "",
+            "create_time": "2026-01-01 00:00:00",
+            "deployment": "",
+            "endpoint": "https://example.com/v1/projects/demo-project/models/demo-model:streamGenerateContent",
+            "id": 1001,
+            "model": "",
+            "product_id": 100,
+            "product_name": "demo-product",
+            "project_name": "",
+            "ptu_type": "",
+            "qpm": 0,
+            "region": "demo-deploy-region",
+            "resource_level": "",
+            "resource_type": "PayGo",
+            "sk": "",
+            "status": "",
+            "tpm": 0,
+            "unit_count": 0,
+            "update_time": "2026-01-01 00:00:00"
+          }
+        ],
+        "user_info_list": [
+          {
+            "auth_type": "AK",
+            "business_name": "",
+            "ch_name": "demo-tenant",
+            "create_time": "2026-01-01 00:00:00",
+            "description": "demo-description",
+            "id": 2001,
+            "is_online": true,
+            "owner": "demo-owner@example.com",
+            "psm": "example.model.gateway",
+            "region": "demo-user-region",
+            "resource_level": "",
+            "scene_id": 3001,
+            "update_time": "2026-01-01 00:00:00",
+            "user_name": "demo-tenant",
+            "user_product_limits_map": {
+              "demo-product": {
+                "product_name": "demo-product",
+                "qpm": 0,
+                "tpm": 0
+              }
+            }
+          }
+        ]
+      },
+      "ptu_info_list": [
+        {
+          "channel_resource_info_list": [
+            {
+              "ak": "sample-access-key-reference",
+              "alto_ticket_url": "",
+              "channel_id": 1,
+              "channel_name": "demo-channel",
+              "channel_resource_end_time": "",
+              "channel_resource_name": "demo-location/demo-account/demo-deployment",
+              "channel_resource_start_time": "",
+              "create_time": "2026-01-01 00:00:00",
+              "deployment": "demo-deployment",
+              "endpoint": "https://example.com/v1/projects/demo-project/models/demo-model:streamGenerateContent",
+              "id": 1002,
+              "model": "",
+              "product_id": 100,
+              "product_name": "demo-product",
+              "project_name": "",
+              "ptu_type": "gsu",
+              "qpm": 100,
+              "region": "demo-deploy-region",
+              "resource_level": "",
+              "resource_type": "PTU",
+              "sk": "",
+              "status": "",
+              "tpm": 1000,
+              "unit_count": 1,
+              "update_time": "2026-01-01 00:00:00"
+            }
+          ],
+          "user_info_list": [
+            {
+              "auth_type": "AK",
+              "business_name": "",
+              "ch_name": "demo-ptu-tenant",
+              "create_time": "2026-01-01 00:00:00",
+              "description": "https://example.com/demo-document",
+              "id": 2002,
+              "is_online": true,
+              "owner": "demo-owner@example.com",
+              "psm": "example.model.consumer",
+              "region": "demo-deploy-region",
+              "resource_level": "",
+              "scene_id": 3002,
+              "update_time": "2026-01-01 00:00:00",
+              "user_name": "demo-ptu-tenant"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

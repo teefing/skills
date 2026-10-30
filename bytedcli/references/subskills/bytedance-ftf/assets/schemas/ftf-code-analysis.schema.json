@@ -1,0 +1,217 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.test/schemas/ftf/ftf-code-analysis.schema.json",
+  "title": "FTF Code Analysis Response v1",
+  "type": "object",
+  "required": ["contract_version", "status"],
+  "properties": {
+    "contract_version": {
+      "const": "ftf-code-analysis/v1"
+    },
+    "status": {
+      "enum": ["accepted", "not_applicable", "rejected"]
+    },
+    "analyzer_run": {
+      "oneOf": [
+        { "$ref": "https://example.test/schemas/ftf/task-analysis.schema.json#/$defs/analyzerRun" },
+        { "$ref": "#/$defs/preSourceAnalyzerRun" }
+      ]
+    },
+    "capabilities": {
+      "const": ["pre_source_evidence_blocked_presentation"]
+    },
+    "reason": {
+      "const": "no_revision_delta"
+    },
+    "task_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "similar_diff_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "repository": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9._-]+(?:/[A-Za-z0-9._-]+)+$"
+    },
+    "revision": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{40}$"
+    },
+    "result_artifact": {
+      "$ref": "#/$defs/resultArtifact"
+    },
+    "evidence_boundary": {
+      "$ref": "https://example.test/schemas/ftf/task-analysis.schema.json#/$defs/evidenceBoundary"
+    },
+    "failure": {
+      "$ref": "#/$defs/runnerFailure"
+    }
+  },
+  "oneOf": [
+    {
+      "properties": {
+        "status": { "const": "accepted" }
+      },
+      "required": ["analyzer_run"],
+      "oneOf": [
+        {
+          "required": ["capabilities"],
+          "properties": { "analyzer_run": { "$ref": "#/$defs/preSourceAnalyzerRun" } }
+        },
+        {
+          "not": { "required": ["capabilities"] },
+          "properties": {
+            "analyzer_run": { "$ref": "https://example.test/schemas/ftf/task-analysis.schema.json#/$defs/analyzerRun" }
+          }
+        }
+      ],
+      "not": {
+        "anyOf": [
+          { "required": ["reason"] },
+          { "required": ["failure"] },
+          { "required": ["evidence_boundary"] }
+        ]
+      }
+    },
+    {
+      "properties": {
+        "status": { "const": "not_applicable" },
+        "reason": { "const": "no_revision_delta" }
+      },
+      "required": [
+        "reason",
+        "task_id",
+        "similar_diff_id",
+        "repository",
+        "revision",
+        "result_artifact"
+      ],
+      "not": {
+        "anyOf": [
+          { "required": ["capabilities"] },
+          { "required": ["analyzer_run"] },
+          { "required": ["evidence_boundary"] },
+          { "required": ["failure"] },
+          { "required": ["base_ref"] },
+          { "required": ["target_ref"] }
+        ]
+      }
+    },
+    {
+      "properties": {
+        "status": { "const": "rejected" }
+      },
+      "required": ["evidence_boundary"],
+      "not": {
+        "anyOf": [
+          { "required": ["capabilities"] },
+          { "required": ["analyzer_run"] },
+          { "required": ["reason"] }
+        ]
+      }
+    }
+  ],
+  "$defs": {
+    "preSourceAnalyzerRun": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "adapter_kind", "task_id", "similar_diff_id", "aggregate", "analysis_state",
+        "verdict", "caused_by_code_change", "confidence", "evidence_blockers",
+        "missing_evidence", "needed_evidence", "warnings", "result_artifact", "presentation_projection"
+      ],
+      "properties": {
+        "adapter_kind": { "const": "legacy_pre_source_evidence_blocked" },
+        "task_id": { "type": "string", "minLength": 1 },
+        "similar_diff_id": { "type": "string", "minLength": 1 },
+        "aggregate": {
+          "const": { "attribution_type": "unknown", "caused_by_code_change": null, "confidence": 0 }
+        },
+        "analysis_state": { "const": "evidence_blocked" },
+        "verdict": { "const": "unknown" },
+        "caused_by_code_change": { "type": "null" },
+        "confidence": { "const": "low" },
+        "evidence_blockers": {
+          "type": "array", "minItems": 1, "maxItems": 1,
+          "items": {
+            "type": "object",
+            "required": ["stage"],
+            "properties": {
+              "stage": { "enum": ["evidence_resolve", "codebase_token_get", "repository_resolve"] }
+            }
+          }
+        },
+        "missing_evidence": { "const": [] },
+        "needed_evidence": { "const": [] },
+        "warnings": {
+          "$ref": "https://example.test/schemas/ftf/task-analysis.schema.json#/$defs/analyzerRun/properties/warnings"
+        },
+        "result_artifact": { "$ref": "#/$defs/resultArtifact" },
+        "presentation_projection": {
+          "type": "object",
+          "required": ["task_id", "diff_results", "result_artifact", "presentation_contract", "presentation_validation"],
+          "properties": {
+            "presentation_contract": { "type": "object", "minProperties": 1 },
+            "presentation_validation": { "type": "object", "minProperties": 1 }
+          }
+        }
+      }
+    },
+    "runnerFailure": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["exit_code", "diagnostics"],
+      "properties": {
+        "exit_code": { "type": "integer", "minimum": 1 },
+        "diagnostics": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 8,
+          "items": { "$ref": "#/$defs/failureDiagnostic" }
+        },
+        "truncated": { "type": "boolean" }
+      }
+    },
+    "failureDiagnostic": {
+      "type": "object",
+      "additionalProperties": false,
+      "minProperties": 1,
+      "properties": {
+        "stage": { "$ref": "#/$defs/diagnosticText" },
+        "code": { "$ref": "#/$defs/diagnosticText" },
+        "message": { "$ref": "#/$defs/diagnosticText" },
+        "site": { "$ref": "#/$defs/diagnosticText" },
+        "vregion": { "$ref": "#/$defs/diagnosticText" },
+        "status_code": { "type": "integer", "minimum": 100, "maximum": 599 },
+        "upstream_code": { "$ref": "#/$defs/diagnosticText" },
+        "upstream_message": { "$ref": "#/$defs/diagnosticText" },
+        "log_id": { "$ref": "#/$defs/diagnosticText" },
+        "request_id": { "$ref": "#/$defs/diagnosticText" },
+        "trace_id": { "$ref": "#/$defs/diagnosticText" },
+        "endpoint": { "$ref": "#/$defs/diagnosticText" }
+      }
+    },
+    "diagnosticText": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 512
+    },
+    "resultArtifact": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["bytes", "sha256"],
+      "properties": {
+        "bytes": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        }
+      }
+    }
+  }
+}

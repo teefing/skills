@@ -1,0 +1,1070 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://bytedcli.local/schemas/ftf-repair-plan.json",
+  "title": "FTF Repair Plan",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "plan_id",
+    "plan_hash",
+    "generated_at",
+    "execution_enabled",
+    "task",
+    "scope",
+    "versions",
+    "summary",
+    "interface_analysis",
+    "findings",
+    "actions",
+    "repair_denoise",
+    "caller_code_analysis",
+    "explicit_exclusions",
+    "approval"
+  ],
+  "properties": {
+    "schema_version": { "const": "1.9" },
+    "plan_id": { "type": "string", "minLength": 1 },
+    "plan_hash": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+    "generated_at": { "type": "string", "format": "date-time" },
+    "execution_enabled": { "const": false },
+    "task": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "url",
+        "site",
+        "space_id",
+        "update_time",
+        "snapshot_hash",
+        "evidence_hash"
+      ],
+      "properties": {
+        "id": { "type": "integer", "minimum": 0 },
+        "url": { "type": ["string", "null"] },
+        "site": { "type": "string" },
+        "space_id": { "type": ["string", "null"] },
+        "update_time": { "type": ["string", "null"] },
+        "snapshot_hash": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+        "evidence_hash": { "type": "string", "pattern": "^[a-f0-9]{64}$" }
+      }
+    },
+    "scope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "direction",
+        "annotation_op_type",
+        "annotation_source",
+        "excluded_annotation_op_types",
+        "diff_types_by_direction",
+        "total_clusters",
+        "analyzed_clusters",
+        "interface_analyzed_clusters",
+        "drilldown_clusters",
+        "truncated",
+        "sample_size"
+      ],
+      "properties": {
+        "direction": { "enum": ["inbound", "outbound", "all"] },
+        "annotation_op_type": {
+          "anyOf": [
+            { "type": "null" },
+            { "const": "all" },
+            { "type": "integer", "minimum": 0 },
+            {
+              "type": "array",
+              "minItems": 1,
+              "items": { "type": "integer", "minimum": 0 }
+            }
+          ]
+        },
+        "annotation_source": {
+          "enum": ["explicit", "url", "default", "none", null]
+        },
+        "excluded_annotation_op_types": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": { "type": "integer", "minimum": 0 }
+        },
+        "diff_types_by_direction": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["inbound", "outbound"],
+          "properties": {
+            "inbound": {
+              "type": "array",
+              "uniqueItems": true,
+              "items": { "type": "integer", "minimum": 0 }
+            },
+            "outbound": {
+              "type": "array",
+              "uniqueItems": true,
+              "items": { "type": "integer", "minimum": 0 }
+            }
+          }
+        },
+        "total_clusters": { "type": "integer", "minimum": 0 },
+        "analyzed_clusters": { "type": "integer", "minimum": 0 },
+        "interface_analyzed_clusters": { "type": "integer", "minimum": 0 },
+        "drilldown_clusters": { "type": "integer", "minimum": 0 },
+        "truncated": { "type": "boolean" },
+        "sample_size": { "type": "integer", "minimum": 1 }
+      }
+    },
+    "versions": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["policy", "case_cards", "tool_cards"],
+      "properties": {
+        "policy": { "type": "string", "minLength": 1 },
+        "case_cards": { "type": "string", "minLength": 1 },
+        "tool_cards": { "type": "string", "minLength": 1 }
+      }
+    },
+    "summary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["executable", "needs_human", "excluded"],
+      "properties": {
+        "executable": { "type": "integer", "minimum": 0 },
+        "needs_human": { "type": "integer", "minimum": 0 },
+        "excluded": { "type": "integer", "minimum": 0 }
+      }
+    },
+    "interface_analysis": { "$ref": "#/$defs/interfaceAnalysis" },
+    "findings": { "type": "array", "items": { "$ref": "#/$defs/finding" } },
+    "actions": { "type": "array", "items": { "$ref": "#/$defs/action" } },
+    "repair_denoise": { "$ref": "#/$defs/repairDenoise" },
+    "caller_code_analysis": { "$ref": "#/$defs/callerCodeAnalysis" },
+    "explicit_exclusions": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "markdown": { "type": "string" },
+    "approval": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "action_ids", "invalidation_rules"],
+      "properties": {
+        "status": { "const": "awaiting_confirmation" },
+        "action_ids": { "type": "array", "items": { "type": "string" } },
+        "invalidation_rules": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": { "findings": { "type": "array", "minItems": 1 } },
+        "required": ["findings"]
+      },
+      "then": {
+        "properties": {
+          "repair_denoise": {
+            "properties": { "queries": { "type": "array", "minItems": 1 } },
+            "required": ["queries"]
+          }
+        }
+      }
+    }
+  ],
+  "$defs": {
+    "aggregateRow": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "value",
+        "cluster_count",
+        "affected_flows",
+        "diff_details",
+        "diff_detail_share"
+      ],
+      "properties": {
+        "value": { "type": "string" },
+        "cluster_count": { "type": "integer", "minimum": 0 },
+        "affected_flows": { "type": "integer", "minimum": 0 },
+        "diff_details": { "type": "integer", "minimum": 0 },
+        "diff_detail_share": { "type": "number", "minimum": 0, "maximum": 1 }
+      }
+    },
+    "interfaceAnalysis": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "coverage",
+        "distributions",
+        "macro_noise_types",
+        "logical_buckets",
+        "worklist"
+      ],
+      "properties": {
+        "coverage": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "mode",
+            "total_clusters",
+            "affected_flows",
+            "diff_details",
+            "affected_flows_basis"
+          ],
+          "properties": {
+            "mode": { "const": "full_catalog" },
+            "total_clusters": { "type": "integer", "minimum": 0 },
+            "affected_flows": { "type": "integer", "minimum": 0 },
+            "diff_details": { "type": "integer", "minimum": 0 },
+            "affected_flows_basis": {
+              "const": "sum_of_cluster_log_count_may_overlap"
+            }
+          }
+        },
+        "distributions": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "directions",
+            "psms",
+            "methods",
+            "normalized_methods",
+            "paths",
+            "annotations"
+          ],
+          "properties": {
+            "directions": {
+              "type": "array",
+              "items": { "$ref": "#/$defs/aggregateRow" }
+            },
+            "psms": {
+              "type": "array",
+              "items": { "$ref": "#/$defs/aggregateRow" }
+            },
+            "methods": {
+              "type": "array",
+              "items": { "$ref": "#/$defs/aggregateRow" }
+            },
+            "normalized_methods": {
+              "type": "array",
+              "items": { "$ref": "#/$defs/aggregateRow" }
+            },
+            "paths": {
+              "type": "array",
+              "items": { "$ref": "#/$defs/aggregateRow" }
+            },
+            "annotations": {
+              "type": "array",
+              "items": { "$ref": "#/$defs/aggregateRow" }
+            }
+          }
+        },
+        "macro_noise_types": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "value",
+              "cluster_count",
+              "affected_flows",
+              "diff_details",
+              "diff_detail_share",
+              "priority_rank",
+              "cumulative_diff_detail_share"
+            ],
+            "properties": {
+              "value": { "type": "string" },
+              "cluster_count": { "type": "integer", "minimum": 0 },
+              "affected_flows": { "type": "integer", "minimum": 0 },
+              "diff_details": { "type": "integer", "minimum": 0 },
+              "diff_detail_share": { "type": "number", "minimum": 0, "maximum": 1 },
+              "priority_rank": {
+                "anyOf": [
+                  { "type": "integer", "minimum": 1, "maximum": 3 },
+                  { "type": "null" }
+                ]
+              },
+              "cumulative_diff_detail_share": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1.000000000000001
+              }
+            }
+          }
+        },
+        "logical_buckets": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/logicalBucket" }
+        },
+        "worklist": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "strategy",
+            "max_clusters",
+            "selected_clusters",
+            "omitted_clusters",
+            "truncated",
+            "five_tuple_drilldown_buckets",
+            "dry_run_scope",
+            "items"
+          ],
+          "properties": {
+            "strategy": { "const": "representative_then_heterogeneous_anomaly" },
+            "max_clusters": { "type": "integer", "minimum": 0, "maximum": 500 },
+            "selected_clusters": { "type": "integer", "minimum": 0, "maximum": 500 },
+            "omitted_clusters": { "type": "integer", "minimum": 0 },
+            "truncated": { "type": "boolean" },
+            "five_tuple_drilldown_buckets": { "type": "integer", "minimum": 0 },
+            "dry_run_scope": { "const": "selected_worklist_only" },
+            "items": {
+              "type": "array",
+              "maxItems": 500,
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "cluster_id",
+                  "psm_task_id",
+                  "psm",
+                  "method",
+                  "direction",
+                  "bucket_id",
+                  "selection_reason"
+                ],
+                "properties": {
+                  "cluster_id": { "type": "string", "minLength": 1 },
+                  "psm_task_id": { "type": "integer", "minimum": 0 },
+                  "psm": { "type": "string", "minLength": 1 },
+                  "method": { "type": "string", "minLength": 1 },
+                  "direction": { "enum": ["inbound", "outbound"] },
+                  "bucket_id": { "type": "string", "pattern": "^B-[0-9]{3,}$" },
+                  "selection_reason": {
+                    "enum": ["representative", "heterogeneous_anomaly"]
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "logicalBucket": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "psm",
+        "normalized_method",
+        "methods",
+        "direction",
+        "outbound_psm",
+        "normalized_outbound_method",
+        "downstream_logical_method",
+        "outbound_methods",
+        "path_family",
+        "diff_types",
+        "unmapped_diff_type_codes",
+        "diff_type",
+        "annotation_distribution",
+        "difference_mechanisms",
+        "difference_mechanism",
+        "cluster_count",
+        "affected_flows",
+        "diff_details",
+        "diff_detail_share",
+        "heterogeneous",
+        "five_tuple_drilldown_required",
+        "representative_cluster"
+      ],
+      "properties": {
+        "id": { "type": "string", "pattern": "^B-[0-9]{3,}$" },
+        "psm": { "type": "string", "minLength": 1 },
+        "normalized_method": { "type": "string", "minLength": 1 },
+        "methods": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": { "type": "string", "minLength": 1 }
+        },
+        "direction": { "enum": ["inbound", "outbound"] },
+        "outbound_psm": { "type": ["string", "null"] },
+        "normalized_outbound_method": { "type": ["string", "null"] },
+        "downstream_logical_method": { "type": ["string", "null"] },
+        "outbound_methods": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": { "type": "string", "minLength": 1 }
+        },
+        "path_family": { "type": "string", "minLength": 1 },
+        "diff_types": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": { "$ref": "#/$defs/diffTypeDescriptor" }
+        },
+        "unmapped_diff_type_codes": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": { "type": "integer", "minimum": 0 }
+        },
+        "diff_type": { "type": ["integer", "null"], "minimum": 0 },
+        "annotation_distribution": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["op_type", "cluster_count", "affected_flows", "diff_details"],
+            "properties": {
+              "op_type": { "type": "integer", "minimum": 0 },
+              "cluster_count": { "type": "integer", "minimum": 1 },
+              "affected_flows": { "type": "integer", "minimum": 0 },
+              "diff_details": { "type": "integer", "minimum": 0 }
+            }
+          }
+        },
+        "difference_mechanisms": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "$ref": "#/$defs/differenceMechanism" }
+        },
+        "difference_mechanism": { "type": "string", "minLength": 1 },
+        "cluster_count": { "type": "integer", "minimum": 1 },
+        "affected_flows": { "type": "integer", "minimum": 0 },
+        "diff_details": { "type": "integer", "minimum": 0 },
+        "diff_detail_share": { "type": "number", "minimum": 0, "maximum": 1 },
+        "heterogeneous": { "type": "boolean" },
+        "five_tuple_drilldown_required": { "type": "boolean" },
+        "representative_cluster": { "$ref": "#/$defs/clusterIdentity" }
+      }
+    },
+    "differenceMechanism": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["type", "summary", "count"],
+      "properties": {
+        "type": {
+          "enum": [
+            "query_failed",
+            "query_skipped",
+            "missing_value_pairs",
+            "redacted",
+            "no_visible_difference",
+            "array_length_changed",
+            "parameter_added",
+            "parameter_missing",
+            "value_added",
+            "value_removed",
+            "long_value_added",
+            "long_value_removed",
+            "complex_value_added",
+            "complex_value_removed",
+            "boolean_changed",
+            "numeric_delta",
+            "time_offset",
+            "fixed_value_changed",
+            "long_value_changed",
+            "complex_value_changed"
+          ]
+        },
+        "summary": { "type": "string" },
+        "count": { "type": "integer", "minimum": 0 }
+      }
+    },
+    "diffTypeDescriptor": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["code", "name", "label", "known"],
+      "properties": {
+        "code": { "type": "integer", "minimum": 0 },
+        "name": { "type": "string", "minLength": 1 },
+        "label": { "type": ["string", "null"] },
+        "known": { "type": "boolean" }
+      }
+    },
+    "clusterIdentity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["cluster_id", "psm_task_id", "psm", "method", "direction"],
+      "properties": {
+        "cluster_id": { "type": "string", "minLength": 1 },
+        "psm_task_id": { "type": "integer", "minimum": 0 },
+        "psm": { "type": "string", "minLength": 1 },
+        "method": { "type": "string", "minLength": 1 },
+        "direction": { "enum": ["inbound", "outbound"] }
+      }
+    },
+    "finding": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "cluster_id",
+        "psm_task_id",
+        "psm",
+        "method",
+        "direction",
+        "outbound_psm",
+        "outbound_method",
+        "diff_path",
+        "flow_diff_url",
+        "affected_flows",
+        "diff_details",
+        "classification",
+        "subtype",
+        "confidence",
+        "disposition",
+        "evidence",
+        "excluded_alternatives",
+        "repair_suggestion",
+        "next_action",
+        "action_id"
+      ],
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "cluster_id": { "type": "string", "minLength": 1 },
+        "psm_task_id": { "type": "integer", "minimum": 0 },
+        "psm": { "type": "string", "minLength": 1 },
+        "method": { "type": "string", "minLength": 1 },
+        "direction": { "enum": ["inbound", "outbound"] },
+        "outbound_psm": { "type": ["string", "null"], "maxLength": 512 },
+        "outbound_method": { "type": ["string", "null"], "maxLength": 512 },
+        "diff_path": { "type": "string", "minLength": 1 },
+        "flow_diff_url": { "type": ["string", "null"] },
+        "diff_link_context": {
+          "anyOf": [{ "$ref": "#/$defs/diffLinkContext" }, { "type": "null" }]
+        },
+        "affected_flows": { "type": "integer", "minimum": 0 },
+        "diff_details": { "type": "integer", "minimum": 0 },
+        "classification": { "enum": ["system_noise", "other"] },
+        "subtype": {
+          "enum": ["dynamic_trace_value", "existing_noise_rule", "evidence_incomplete"]
+        },
+        "confidence": { "enum": ["high", "medium", "low"] },
+        "disposition": { "enum": ["executable", "needs_human", "excluded"] },
+        "evidence": { "type": "array", "items": { "type": "string" } },
+        "excluded_alternatives": { "type": "array", "items": { "type": "string" } },
+        "repair_suggestion": {
+          "enum": [
+            "add_noise_template",
+            "set_time_offset",
+            "update_array_match",
+            "outbound_mock_unmatched",
+            "undecided"
+          ]
+        },
+        "next_action": { "type": "string", "minLength": 1 },
+        "action_id": {
+          "anyOf": [{ "type": "string", "minLength": 1 }, { "type": "null" }]
+        }
+      }
+    },
+    "diffLinkContext": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "site",
+        "space_id",
+        "task_id",
+        "psm_task_id",
+        "method",
+        "protocol",
+        "log_id",
+        "similar_diff_id"
+      ],
+      "properties": {
+        "site": { "enum": ["cn", "zg"] },
+        "space_id": { "type": ["string", "null"] },
+        "task_id": { "type": "integer", "minimum": 0 },
+        "psm_task_id": { "type": "integer", "minimum": 0 },
+        "method": { "type": "string", "minLength": 1 },
+        "protocol": { "type": ["string", "null"] },
+        "log_id": { "type": ["string", "null"] },
+        "similar_diff_id": { "type": "string", "minLength": 1 }
+      }
+    },
+    "action": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "type",
+        "source_findings",
+        "target",
+        "parameters",
+        "change",
+        "preconditions",
+        "risk",
+        "rollback",
+        "read_back",
+        "verification",
+        "approval",
+        "execution_available"
+      ],
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "type": {
+          "enum": [
+            "noise_template_upsert",
+            "set_time_offset",
+            "update_array_match",
+            "outbound_mock_match_config"
+          ]
+        },
+        "source_findings": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "type": "string", "minLength": 1 }
+        },
+        "target": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "psm",
+            "method",
+            "direction",
+            "outbound_psm",
+            "outbound_method",
+            "diff_path"
+          ],
+          "properties": {
+            "psm": { "type": "string", "minLength": 1 },
+            "method": { "type": "string", "minLength": 1 },
+            "direction": { "enum": ["inbound", "outbound"] },
+            "outbound_psm": { "type": ["string", "null"] },
+            "outbound_method": { "type": ["string", "null"] },
+            "diff_path": { "type": "string", "minLength": 1 }
+          }
+        },
+        "parameters": {
+          "anyOf": [
+            { "type": "null" },
+            {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["path"],
+              "properties": {
+                "path": { "type": "string", "minLength": 1 }
+              }
+            },
+            {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["offset_seconds"],
+              "properties": {
+                "offset_seconds": { "type": "number" }
+              }
+            },
+            {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["scene_name", "mode"],
+              "properties": {
+                "scene_name": { "type": "string", "minLength": 1 },
+                "mode": { "type": "integer", "minimum": 0 },
+                "match_type": { "enum": [2, 3] },
+                "key_list": {
+                  "type": "array",
+                  "minItems": 1,
+                  "items": { "type": "string", "minLength": 1 }
+                }
+              }
+            }
+          ]
+        },
+        "change": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["before", "after"],
+          "properties": {
+            "before": { "type": "string" },
+            "after": { "type": "string" }
+          }
+        },
+        "preconditions": { "type": "array", "items": { "type": "string" } },
+        "risk": { "const": "low" },
+        "rollback": { "type": "string", "minLength": 1 },
+        "read_back": { "type": "string", "minLength": 1 },
+        "verification": { "type": "array", "items": { "type": "string" } },
+        "approval": { "const": "required" },
+        "execution_available": { "const": false }
+      }
+    },
+    "repairDenoise": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "requested_process_mode",
+        "queries"
+      ],
+      "properties": {
+        "status": { "enum": ["complete", "partial", "skipped"] },
+        "requested_process_mode": { "const": "dry_run" },
+        "queries": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": { "$ref": "#/$defs/repairDenoiseQuery" }
+        }
+      },
+      "allOf": [
+        {
+          "if": { "properties": { "status": { "const": "complete" } } },
+          "then": {
+            "properties": {
+              "queries": {
+                "items": { "properties": { "status": { "const": "success" } } }
+              }
+            }
+          }
+        },
+        {
+          "if": { "properties": { "status": { "const": "skipped" } } },
+          "then": {
+            "properties": {
+              "queries": {
+                "items": { "properties": { "status": { "const": "skipped" } } }
+              }
+            }
+          }
+        },
+        {
+          "if": { "properties": { "status": { "const": "partial" } } },
+          "then": {
+            "properties": {
+              "queries": {
+                "contains": {
+                  "anyOf": [
+                    {
+                      "properties": { "status": { "enum": ["failed", "skipped"] } },
+                      "required": ["status"]
+                    },
+                    {
+                      "properties": {
+                        "array_mirror": {
+                          "properties": { "status": { "const": "failed" } },
+                          "required": ["status"]
+                        }
+                      },
+                      "required": ["array_mirror"]
+                    }
+                  ]
+                },
+                "allOf": [
+                  {
+                    "contains": {
+                      "properties": { "status": { "enum": ["success", "failed"] } },
+                      "required": ["status"]
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        }
+      ]
+    },
+    "callerCodeAnalysis": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "scope", "items"],
+      "properties": {
+        "status": { "enum": ["complete", "partial", "skipped"] },
+        "scope": { "const": "current_inbound_service_only" },
+        "items": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/callerCodeAnalysisItem" }
+        }
+      }
+    },
+    "callerCodeAnalysisItem": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "finding_id",
+        "cluster_id",
+        "status",
+        "conclusion",
+        "psm",
+        "method",
+        "diff_path",
+        "field_name",
+        "repository",
+        "revision",
+        "entrypoints",
+        "assignment_sites",
+        "outbound_sites",
+        "current_service_consumers",
+        "value_components",
+        "basis",
+        "error"
+      ],
+      "properties": {
+        "finding_id": { "type": "string", "minLength": 1 },
+        "cluster_id": { "type": "string", "minLength": 1 },
+        "status": { "enum": ["analyzed", "skipped", "failed"] },
+        "conclusion": {
+          "enum": ["noise_candidate", "business_semantic", "undecided", "unavailable"]
+        },
+        "psm": { "type": "string", "minLength": 1 },
+        "method": { "type": "string", "minLength": 1 },
+        "diff_path": { "type": "string", "minLength": 1 },
+        "field_name": { "type": ["string", "null"] },
+        "repository": { "type": ["string", "null"] },
+        "revision": { "type": ["string", "null"] },
+        "entrypoints": { "type": "array", "items": { "type": "string" } },
+        "assignment_sites": { "type": "array", "items": { "type": "string" } },
+        "outbound_sites": { "type": "array", "items": { "type": "string" } },
+        "current_service_consumers": { "type": "array", "items": { "type": "string" } },
+        "value_components": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": { "enum": ["random", "time", "business", "unknown"] }
+        },
+        "basis": { "type": "array", "items": { "type": "string" } },
+        "error": { "type": ["string", "null"] }
+      }
+    },
+    "repairDenoiseDetail": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "similar_diff_id": { "type": "string", "maxLength": 512 },
+        "method": { "type": "string", "maxLength": 512 },
+        "outbound_psm": { "type": "string", "maxLength": 512 },
+        "outbound_method": { "type": "string", "maxLength": 512 },
+        "noise_key": { "type": "string", "maxLength": 512 },
+        "base_json_path": { "type": "string", "maxLength": 512 },
+        "replay_json_path": { "type": "string", "maxLength": 512 },
+        "denoise_op_type": {
+          "enum": [
+            "add_noise_template",
+            "set_time_offset",
+            "update_array_match",
+            "undecided"
+          ]
+        },
+        "diff_value_count": { "type": "integer", "minimum": 0 },
+        "diff_values_truncated": { "type": "boolean" },
+        "diff_value_list": {
+          "type": "array",
+          "maxItems": 100,
+          "items": {}
+        }
+      }
+    },
+    "repairArrayMirror": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "match_strategy",
+        "match_keys",
+        "diff_ids",
+        "record_count",
+        "paired_record_count",
+        "residual_paths",
+        "basis",
+        "endpoints",
+        "error"
+      ],
+      "properties": {
+        "status": { "enum": ["confirmed", "inconclusive", "failed"] },
+        "match_strategy": { "enum": ["order", "key", null] },
+        "match_keys": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": { "type": "string", "minLength": 1, "maxLength": 512 }
+        },
+        "diff_ids": {
+          "type": "array",
+          "maxItems": 2,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["diff_id", "reason"],
+            "properties": {
+              "diff_id": { "type": "string", "minLength": 1, "maxLength": 512 },
+              "reason": { "type": "string", "minLength": 1, "maxLength": 512 }
+            }
+          }
+        },
+        "record_count": { "type": "integer", "minimum": 0 },
+        "paired_record_count": { "type": "integer", "minimum": 0 },
+        "residual_paths": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": { "type": "string", "minLength": 1, "maxLength": 512 }
+        },
+        "basis": { "type": "string", "minLength": 1, "maxLength": 2048 },
+        "endpoints": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": { "type": "string", "minLength": 1, "maxLength": 2048 }
+        },
+        "error": {
+          "anyOf": [
+            { "type": "null" },
+            {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["code", "message", "status_code"],
+              "properties": {
+                "code": { "type": ["string", "number", "null"] },
+                "message": { "type": "string", "minLength": 1 },
+                "status_code": { "type": ["integer", "null"] }
+              }
+            }
+          ]
+        }
+      },
+      "allOf": [
+        {
+          "if": { "properties": { "status": { "const": "confirmed" } } },
+          "then": {
+            "properties": {
+              "match_strategy": { "enum": ["order", "key"] },
+              "record_count": { "minimum": 1 },
+              "error": { "type": "null" }
+            }
+          }
+        },
+        {
+          "if": { "properties": { "match_strategy": { "const": "order" } } },
+          "then": { "properties": { "match_keys": { "maxItems": 0 } } }
+        },
+        {
+          "if": { "properties": { "match_strategy": { "const": "key" } } },
+          "then": { "properties": { "match_keys": { "minItems": 1 } } }
+        },
+        {
+          "if": { "properties": { "status": { "enum": ["inconclusive", "failed"] } } },
+          "then": {
+            "properties": {
+              "match_strategy": { "type": "null" },
+              "match_keys": { "maxItems": 0 }
+            }
+          }
+        },
+        {
+          "if": { "properties": { "status": { "const": "failed" } } },
+          "then": { "properties": { "error": { "type": "object" } } }
+        },
+        {
+          "if": { "properties": { "status": { "const": "inconclusive" } } },
+          "then": { "properties": { "error": { "type": "null" } } }
+        }
+      ]
+    },
+    "repairDenoiseQuery": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "cluster_id",
+        "psm_task_id",
+        "psm",
+        "method",
+        "direction",
+        "status",
+        "requested_process_mode",
+        "process_mode",
+        "executed",
+        "total_llm_noise_count",
+        "detail_level",
+        "details",
+        "endpoint",
+        "reason",
+        "error"
+      ],
+      "properties": {
+        "cluster_id": { "type": "string", "minLength": 1 },
+        "psm_task_id": { "type": "integer", "minimum": 0 },
+        "psm": { "type": "string", "minLength": 1 },
+        "method": { "type": "string", "minLength": 1 },
+        "direction": { "enum": ["inbound", "outbound"] },
+        "status": { "enum": ["success", "failed", "skipped"] },
+        "requested_process_mode": { "const": "dry_run" },
+        "process_mode": {
+          "anyOf": [{ "const": "dry_run" }, { "type": "null" }]
+        },
+        "executed": {
+          "anyOf": [{ "const": false }, { "type": "null" }]
+        },
+        "total_llm_noise_count": { "type": ["integer", "null"], "minimum": 0 },
+        "detail_level": { "type": ["string", "null"] },
+        "details": {
+          "anyOf": [
+            { "type": "null" },
+            { "$ref": "#/$defs/repairDenoiseDetail" },
+            {
+              "type": "array",
+              "maxItems": 50000,
+              "items": { "$ref": "#/$defs/repairDenoiseDetail" }
+            }
+          ]
+        },
+        "endpoint": { "type": ["string", "null"] },
+        "reason": { "type": ["string", "null"] },
+        "array_mirror": { "$ref": "#/$defs/repairArrayMirror" },
+        "error": {
+          "anyOf": [
+            { "type": "null" },
+            {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["code", "message", "status_code"],
+              "properties": {
+                "code": { "type": ["string", "number", "null"] },
+                "message": { "type": "string", "minLength": 1 },
+                "status_code": { "type": ["integer", "null"] }
+              }
+            }
+          ]
+        }
+      },
+      "allOf": [
+        {
+          "if": { "properties": { "status": { "enum": ["failed", "skipped"] } } },
+          "then": {
+            "properties": {
+              "process_mode": { "type": "null" },
+              "executed": { "type": "null" }
+            }
+          }
+        },
+        {
+          "if": { "properties": { "status": { "const": "success" } } },
+          "then": {
+            "properties": {
+              "process_mode": { "const": "dry_run" },
+              "executed": { "const": false },
+              "reason": { "type": "null" },
+              "error": { "type": "null" }
+            }
+          }
+        },
+        {
+          "if": { "properties": { "status": { "const": "failed" } } },
+          "then": {
+            "properties": {
+              "reason": { "type": "null" },
+              "error": { "type": "object" }
+            }
+          }
+        },
+        {
+          "if": { "properties": { "status": { "const": "skipped" } } },
+          "then": {
+            "properties": {
+              "reason": { "type": "string", "minLength": 1 },
+              "error": { "type": "null" }
+            }
+          }
+        }
+      ]
+    }
+  }
+}
